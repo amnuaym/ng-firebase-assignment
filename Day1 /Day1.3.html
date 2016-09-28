@@ -1,0 +1,43 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<div ng-controller="AppController as vm">
+   <!-- // vm = view model //-->
+
+  <div ng-controller="AuthController as auth">
+    Current User: {{ auth.currentUser }}
+  </div><br>
+  Enter name:
+  <input ng-model="vm.name">
+  <h1>Hi, {{ vm.name }}</h1>
+</div>
+<script>
+  angular
+    .module('user', [])
+    .service('UserService', function () {
+      this.getUser = getUser
+      function getUser (id) {
+        return 'user-' + id
+      }
+    })
+  angular
+    .module('auth', ['user'])
+    .controller('AuthController', function (UserService) {
+      this.currentUser = UserService.getUser(1)
+    })
+  angular
+    .module('app', ['auth'])
+    .controller('AppController', function () {
+      this.name = 'acoshift'
+    })
+  angular.bootstrap(document, ['app'])
+</script>
+   <!-- This is HTML comments
+   
+      // This is a comment. It is similar to comments in C++
+   
+      /*
+      * This is a multiline comment in JavaScript
+      * It is very similar to comments in C Programming
+      */
+   
+   //-->

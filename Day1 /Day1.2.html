@@ -1,0 +1,16 @@
+<!doctype html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<div ng-controller="AppController as vm">
+    Hi, {{ vm.name }}
+</div>
+
+<script>
+    angular
+        .module('app', [])
+        .controller('AppController', function () {
+            this.name = 'amnuay'
+        })
+
+angular.bootstrap(document, ['app'])
+ </script>
+

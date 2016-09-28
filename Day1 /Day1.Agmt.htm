@@ -1,0 +1,65 @@
+<!-- //  libraly from Google's CDN
+https://developers.google.com/speed/libraries/
+// -->
+
+<!-- // include libraly from Google's CDN //-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<!-- // Need CSS for better look but how? //-->
+<div ng-controller="registrationController">
+<h1>Thank you for your interest!</h1>
+<p>Please choose fill in registration form below.</p>
+<table>
+<tr>
+    <td>Gender: </td>
+    <td><input type="radio" value="male" ng-model= "Gender">Male</td>
+    <td><input type="radio" value="female" ng-model= "Gender">Female</td>    
+</tr>
+<tr>
+    <td>Firstname: </td>
+    <td><input type= "text" ng-model = "Firstname"></td>
+</tr>
+<tr>
+    <td>Lastname: </td>
+    <td><input type= "text" ng-model = "Lastname"></td>
+</tr>
+<tr>
+    <td>Username: </td>
+    <td><input type= "text" ng-model = "Username"></td>
+</tr>
+<tr>
+    <td>Password: </td>
+    <td><input type= "password" ng-model = "Password"></td>
+</tr>
+<tr>
+    <td>Email: </td>
+    <td><input type= "email" ng-model = "Email"></td>
+</tr>
+</table>
+<input type="button" value="Clear" ng-click="">
+<input type="button" value="Submit" ng-click="">
+<br>
+<br>
+<br>
+{{ Username }}
+
+<script>
+  angular
+   .module('register', [])
+   .service('Username', funtion () {
+     this.getUsername = getUsername
+
+   })
+
+angular.bootstrap(document, ['app'])
+</script>
+
+   <!-- This is HTML comments
+   
+      // This is a comment. It is similar to comments in C++
+   
+      /*
+      * This is a multiline comment in JavaScript
+      * It is very similar to comments in C Programming
+      */
+   
+   //-->
