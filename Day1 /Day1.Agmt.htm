@@ -5,6 +5,10 @@ https://developers.google.com/speed/libraries/
 <!-- // include libraly from Google's CDN //-->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 <!-- // Need CSS for better look but how? //-->
+
+
+<!-- This is View from model -->
+
 <div ng-controller="registrationController">
 <h1>Thank you for your interest!</h1>
 <p>Please choose fill in registration form below.</p>
@@ -35,20 +39,29 @@ https://developers.google.com/speed/libraries/
     <td><input type= "email" ng-model = "Email"></td>
 </tr>
 </table>
+<button ng-click=".submit()">Submit</button>
+<!--
 <input type="button" value="Clear" ng-click="">
 <input type="button" value="Submit" ng-click="">
+-->
 <br>
 <br>
 <br>
+
+{{ Firstname }}
+{{ Lastname }}
 {{ Username }}
+{{ Password }}
+{{ Email }}
 
+<!-- This is Controllrt -->
 <script>
-  angular
-   .module('register', [])
-   .service('Username', funtion () {
-     this.getUsername = getUsername
+  angular.module('app', [])
+    .controller('registrationController', function () {
+        this.submit = function () {
+        }
+    })
 
-   })
 
 angular.bootstrap(document, ['app'])
 </script>
